@@ -1,0 +1,90 @@
+/*
+Theme Name:  Snippet Site
+Author: Melissa Cabral
+Author URI: http://wordpress.melissacabral.com
+Description: A theme for organizing snippets into categories
+Version: 1.0
+*/
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+body{
+	background-color:#eee;
+	min-width: 320px;
+	color:white;
+}
+a{
+	color:white;
+	text-decoration: none;
+}
+a:hover{
+	background-color: rgba(255,255,255,.2);
+}
+#content a{
+	color:#2392C7;
+}
+header[role=banner]{
+	background-color:#11527A;
+	padding:1em;
+}
+#sidebar{	
+	background-color:#11527A;
+	padding:1em;
+}
+#content{
+	color:black;
+	padding:1em;
+}
+footer[role=contentinfo]{
+	clear:both;
+	background-color: black;
+}
+header[role=banner] nav .menu{
+	margin: 0;
+	padding: 0;
+
+}
+header[role=banner] nav .menu li{
+	list-style-type: none;
+	display: inline-block;
+	margin: 5px;
+}
+header[role=banner] nav .menu li a{
+	padding: 6px;
+}
+
+.snippet-info{
+	background-color:#fff;
+	padding:1em;
+}
+
+@media screen and (min-width:750px){
+	body{
+		background: #11527a; /* Old browsers */
+background: -moz-linear-gradient(left,  #11527a 20%, #eeeeee 20%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(20%,#11527a), color-stop(20%,#eeeeee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* IE10+ */
+background: linear-gradient(to right,  #11527a 20%,#eeeeee 20%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
+
+	}
+	#content{
+		float:right;
+		width:80%;
+	}
+	#sidebar{
+		float:left;
+		width:20%;
+	}
+	.entry-content{
+		width:70%;
+		float:left;
+	}
+	.snippet-info{
+		float:right;
+		width:30%;
+	}
+}
