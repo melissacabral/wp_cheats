@@ -3,11 +3,13 @@
 	<?php 
 	if(is_tax()):
 		$term =	$wp_query->queried_object;
+		echo 'More ';
 		echo $term->name;
 		$snippets = new WP_query(array(
 			'post_type' => 'snippet',
 			//type = snippet taxonomy
 			'type' => $term->slug,
+			
 		));
 	elseif (is_single()) :
 		echo 'Related Snippets';
@@ -16,7 +18,8 @@
 		//get all the posts
 		echo 'Latest Snippets';
 		$snippets = new WP_query(array(
-				'post_type' => 'snippet',				
+				'post_type' => 'snippet',	
+
 		));	
 	endif; ?>
 	</h1>

@@ -1,3 +1,4 @@
+</div><!-- end page-wrap -->
 	<footer id="footer" role="contentinfo">
 		&copy; 2014 by Author. All Rights Reserved. 
 	</footer>

@@ -5,14 +5,19 @@ Author URI: http://wordpress.melissacabral.com
 Description: A theme for organizing snippets into categories
 Version: 1.0
 */
+@import url(http://fonts.googleapis.com/css?family=Signika:400,700);
+
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
-body{
-	background-color:#eee;
+html, body{
+	height: 100%;
+}
+body{	
 	min-width: 320px;
 	color:white;
+	font-family: 'Signika', sans-serif;
 }
 a{
 	color:white;
@@ -29,7 +34,9 @@ header[role=banner]{
 	padding:1em;
 }
 #sidebar{	
-	background-color:#11527A;
+	background-color: #11527A;
+}
+#sidebar >*{
 	padding:1em;
 }
 #content{
@@ -39,6 +46,15 @@ header[role=banner]{
 footer[role=contentinfo]{
 	clear:both;
 	background-color: black;
+}
+/*Header stuff*/
+.site-name{
+	margin-bottom: 0;
+}
+.site-description{
+	margin-top: 0;
+	font-weight: normal;
+	font-size: 1.2em;
 }
 header[role=banner] nav .menu{
 	margin: 0;
@@ -52,23 +68,71 @@ header[role=banner] nav .menu li{
 }
 header[role=banner] nav .menu li a{
 	padding: 6px;
+	display: block;
+}
+/*Search*/
+#searchform{
+	width:100%;
+}
+#searchform #s{ /* text field */
+	width:80%;
+	margin:0;
+	padding:0;
+	border:0;
 }
 
+#searchform input[type=submit]{ /* button */
+	width:18%;
+	margin:0;
+	padding:0;
+	border: 0;
+}
 .snippet-info{
 	background-color:#fff;
 	padding:1em;
 }
+.screen-reader-text{
+	display: none;
+}
+/*Menu*/
+.current-menu-item a{
+	background-color: rgba(0,0,0,.2);
+}
+/*Sidebar typography*/
+#sidebar h1{
+	font-size:1.2em;
+	background-color: rgba(0,0,0,.1);
+	margin:0;
+}
+#sidebar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 1em;
+}
+/*sticky footer*/
 
+.page-wrap{
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+.page-wrap:after {
+	content: "";
+	display: block;
+}
+footer[role=contentinfo]{
+	height:50px;
+}
+/*end sticky footer*/
 @media screen and (min-width:750px){
 	body{
 		background: #11527a; /* Old browsers */
-background: -moz-linear-gradient(left,  #11527a 20%, #eeeeee 20%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(20%,#11527a), color-stop(20%,#eeeeee)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* IE10+ */
-background: linear-gradient(to right,  #11527a 20%,#eeeeee 20%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
+		background: -moz-linear-gradient(left,  #11527a 20%, #eeeeee 20%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(20%,#11527a), color-stop(20%,#eeeeee)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* IE10+ */
+		background: linear-gradient(to right,  #11527a 20%,#eeeeee 20%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
 
 	}
 	#content{
@@ -78,8 +142,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', end
 	#sidebar{
 		float:left;
 		width:20%;
+		background-color: transparent;
 	}
-	.entry-content{
+	.single .entry-content{
 		width:70%;
 		float:left;
 	}
@@ -87,4 +152,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', end
 		float:right;
 		width:30%;
 	}
+	#searchform{
+		float:right;
+		width:320px;
+	}
+	/*nav*/
+	header[role=banner] nav .menu{
+		margin-left:20%;
+	}
+
+
 }

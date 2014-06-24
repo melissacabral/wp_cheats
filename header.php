@@ -14,17 +14,19 @@
 	<![endif]-->
 </head>
 
-<body class="home">
+<body <?php body_class( ); ?>>
+	<div class="page-wrap">
 	<header role="banner">
+		<?php get_search_form();  //includes searchform.php if it exists ?>	
 		<h1 class="site-name"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ) ?></a></h1>
-		<h2><?php bloginfo( 'description' ); ?></h2>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		
 		<?php    
-			$args = array(
-				'theme_location' => 'top_menu',
-				'container' => 'nav',
-				'fallback_cb' => '',
+		$args = array(
+			'theme_location' => 'top_menu',
+			'container' => 'nav',
+			'fallback_cb' => '',
 			);		
 			wp_nav_menu( $args ); ?>
-	
-		<?php get_search_form();  //includes searchform.php if it exists ?>	
-	</header>
+
+</header>
