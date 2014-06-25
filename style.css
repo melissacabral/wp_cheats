@@ -6,11 +6,11 @@ Description: A theme for organizing snippets into categories
 Version: 1.0
 */
 @import url(http://fonts.googleapis.com/css?family=Signika:400,700);
-
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
+/*==basic layout and colors*/
 html, body{
 	height: 100%;
 }
@@ -26,12 +26,12 @@ a{
 a:hover{
 	background-color: rgba(255,255,255,.2);
 }
-#content a{
+main a{
 	color:#2392C7;
 }
 header[role=banner]{
 	background-color:#11527A;
-	padding:1em;
+	padding:1em 1em 0 1em;
 }
 #sidebar{	
 	background-color: #11527A;
@@ -47,7 +47,7 @@ footer[role=contentinfo]{
 	clear:both;
 	background-color: black;
 }
-/*Header stuff*/
+/*==Header stuff*/
 .site-name{
 	margin-bottom: 0;
 }
@@ -59,12 +59,11 @@ footer[role=contentinfo]{
 header[role=banner] nav .menu{
 	margin: 0;
 	padding: 0;
-
 }
 header[role=banner] nav .menu li{
 	list-style-type: none;
 	display: inline-block;
-	margin: 5px;
+
 }
 header[role=banner] nav .menu li a{
 	padding: 6px;
@@ -80,7 +79,6 @@ header[role=banner] nav .menu li a{
 	padding:0;
 	border:0;
 }
-
 #searchform input[type=submit]{ /* button */
 	width:18%;
 	margin:0;
@@ -94,11 +92,12 @@ header[role=banner] nav .menu li a{
 .screen-reader-text{
 	display: none;
 }
-/*Menu*/
+/*==Menu*/
 .current-menu-item a{
-	background-color: rgba(0,0,0,.2);
+	background-color: #eee;
+	color:black;
 }
-/*Sidebar typography*/
+/*==Sidebar typography*/
 #sidebar h1{
 	font-size:1.2em;
 	background-color: rgba(0,0,0,.1);
@@ -109,8 +108,76 @@ header[role=banner] nav .menu li a{
 	margin: 0;
 	padding: 1em;
 }
-/*sticky footer*/
+/*==Content typography*/
+.hentry{
+	border-bottom:solid 1px #D8D8D8;
+	position: relative;
+	margin-bottom:2em;
+}
+.entry-title{
+	margin:0 0 .5em 0;
+}
 
+.post-edit-link{
+	position: absolute;
+	top:0;
+	right:1em;
+	font-size: .7em;
+}
+/*get rid of zebra stripes from wp-syntax plugin*/
+.wp_syntax td.code{
+	background-image: none !important;
+	background-color:#fff;
+}
+
+.snippet-info h3{
+	margin:.5em 0 .25em 0;
+}
+.snippet-info .type{
+	display: block;
+	margin-top:1em;
+}
+.snippet-info .keywords{
+	display: block;
+	margin-top:1em;
+}
+.snippet-info .keywords a{  					/*tag shape*/
+	background-color: #8FAFC2;
+	color:white;
+	border-right:none;
+	display: inline-block;
+	height:24px;
+	line-height: 24px;
+	padding:0 8px 0 4px ;
+	-webkit-border-radius:  0 5px 5px 0;
+	border-radius:  0 5px 5px 0;
+	position: relative;
+	margin:0 5px 6px 1em;
+}
+.snippet-info .keywords a:after{
+	content: "";
+	width:0;
+	height:0;
+	position: absolute;
+	left:-12px;
+	top:0px;
+	border-right:12px solid #8FAFC2;
+	border-top:solid 12px transparent;
+	border-bottom:solid 12px transparent;
+}
+.snippet-info .keywords a:before{
+	content: "";
+	background-color:white;
+	-webkit-border-radius:  30px;
+	border-radius:  30px;
+	width:4px;
+	height:4px;
+	position: absolute;
+	top: 10px;
+	left:-5px;
+	z-index: 3000;
+}
+/*==sticky footer*/
 .page-wrap{
 	min-height: 100%;
 	margin-bottom: -50px;
@@ -123,6 +190,7 @@ footer[role=contentinfo]{
 	height:50px;
 }
 /*end sticky footer*/
+/*==Breakpoints*/
 @media screen and (min-width:750px){
 	body{
 		background: #11527a; /* Old browsers */
@@ -133,7 +201,6 @@ footer[role=contentinfo]{
 		background: -ms-linear-gradient(left,  #11527a 20%,#eeeeee 20%); /* IE10+ */
 		background: linear-gradient(to right,  #11527a 20%,#eeeeee 20%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11527a', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
-
 	}
 	#content{
 		float:right;
@@ -160,6 +227,4 @@ footer[role=contentinfo]{
 	header[role=banner] nav .menu{
 		margin-left:20%;
 	}
-
-
 }

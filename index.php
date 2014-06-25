@@ -8,7 +8,7 @@
 			while( have_posts() ):
 				the_post();
 			?>
-	<article id="post-<?php the_ID();?>" class="post">
+	<article id="post-<?php the_ID();?>" <?php post_class(); ?>>
 		<h2 class="entry-title"> 
 			<a href="<?php the_permalink(); ?>"> 
 				<?php the_title(); ?> 
@@ -36,10 +36,12 @@
 
 			<div class="postmeta"> 
 				<span class="type"> 
+					<h3>Snippet Type:</h3>
 					<?php the_terms( $post->ID, 'type');?>
 				</span>
 				<span class="keywords">
-					<?php the_terms( $post->ID, 'keyword');?>
+					<h3>Tags:</h3>
+					<?php the_terms( $post->ID, 'keyword', '', '', '');?>
 				</span> 
 			</div><!-- end postmeta -->	
 		</div>		
